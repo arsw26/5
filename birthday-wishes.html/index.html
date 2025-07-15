@@ -233,9 +233,30 @@
         font-size: 1.3rem;
       }
     }
+
+    /* Background music player styles */
+    #bgMusic {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      opacity: 0.3;
+      z-index: 100;
+      transition: opacity 0.3s;
+    }
+
+    #bgMusic:hover {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://github.com/arsw26/Happy-Birthday-Srija/raw/main/birthday-wishes.html/song.mp3" type="audio/mpeg">
+  </audio>
+
   <!-- Floating hearts container -->
   <div class="hearts" id="topHearts"></div>
   <div class="hearts" id="loveTexts"></div>
@@ -292,7 +313,7 @@
   <h2>A Special Voice Message For You</h2>
   <div class="audio-player">
     <audio controls>
-      <source src="https://github.com/arsw26/Happy-Birthday-Srija/raw/main/birthday-wishes.html/song.mp3" type="audio/mpeg">
+      <source src="https://github.com/arsw26/5/raw/main/song.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
   </div>
@@ -300,14 +321,19 @@
 </div>
 
   <script>
+    // Check if music should be playing from previous page
+    if (localStorage.getItem('musicPlaying') === 'true') {
+      document.getElementById('bgMusic').play();
+    }
+
     // Photo data
     const photos = [
-      { src: "https://github.com/arsw26/Happy-Birthday-Srija/raw/main/birthday-wishes.html/images/photoA.jpg", caption: "My Beautiful Jaan💓💗" },
-      { src: "https://github.com/arsw26/Happy-Birthday-Srija/raw/main/birthday-wishes.html/images/photoB.jpg", caption: "I Love You💓💗" },
-      { src: "https://github.com/arsw26/Happy-Birthday-Srija/raw/main/birthday-wishes.html/images/photoC.jpg", caption: "You're My Everything💓💗" },
-      { src: "https://github.com/arsw26/Happy-Birthday-Srija/raw/main/birthday-wishes.html/images/photoD.jpg", caption: "I Love You Srija💓💗" },
-      { src: "https://github.com/arsw26/Happy-Birthday-Srija/raw/main/birthday-wishes.html/images/photoE.jpg", caption: "My Love💓💗" },
-      { src: "https://github.com/arsw26/Happy-Birthday-Srija/raw/main/birthday-wishes.html/images/photoF.jpg", caption: "Forever Yours--💓💗" }
+      { src: "https://github.com/arsw26/5/raw/main/birthday-wishes.html/images/photoA.jpg", caption: "My Beautiful Jaan💓💗" },
+      { src: "https://github.com/arsw26/5/raw/main/birthday-wishes.html/images/photoB.jpg", caption: "I Love You💓💗" },
+      { src: "https://github.com/arsw26/5/raw/main/birthday-wishes.html/images/photoC.jpg", caption: "You're My Everything💓💗" },
+      { src: "https://github.com/arsw26/5/raw/main/birthday-wishes.html/images/photoD.jpg", caption: "I Love You Srija💓💗" },
+      { src: "https://github.com/arsw26/5/raw/main/birthday-wishes.html/images/photoE.jpg", caption: "My Love💓💗" },
+      { src: "https://github.com/arsw26/5/raw/main/birthday-wishes.html/images/photoF.jpg", caption: "Forever Yours--💓💗" }
     ];
 
     // Initialize slideshow
