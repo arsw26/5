@@ -270,9 +270,30 @@
         padding: 20px 15px;
       }
     }
+
+    /* Background music player styles */
+    #bgMusic {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      opacity: 0.3;
+      z-index: 100;
+      transition: opacity 0.3s;
+    }
+
+    #bgMusic:hover {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  <!-- Background Music -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="https://github.com/arsw26/5/raw/main/5/song.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="hearts" id="topHearts"></div>
   <div class="hearts" id="loveTexts"></div>
   
@@ -286,32 +307,32 @@
       <h2 class="gallery-title">My cute, beautiful, sweet and lovely Jaan💞💓</h2>
       <div class="gallery-grid">
         <div class="photo-card" style="animation-delay:2s;">
-          <img src="https://github.com/arsw26/Happy-Birthday-Srija/raw/main/index.html/image/photoA.jpg">
+          <img src="https://github.com/arsw26/5/raw/main/index.html/image/photoA.jpg">
           <div class="photo-caption">I</div>
         </div>
         
         <div class="photo-card" style="animation-delay:5s;">
-          <img src="https://github.com/arsw26/Happy-Birthday-Srija/raw/main/index.html/image/photoB.jpg">
+          <img src="https://github.com/arsw26/5/raw/main/index.html/image/photoB.jpg">
           <div class="photo-caption">Love</div>
         </div>
         
         <div class="photo-card" style="animation-delay:8s;">
-          <img src="https://github.com/arsw26/Happy-Birthday-Srija/raw/main/index.html/image/photoC.jpg">
+          <img src="https://github.com/arsw26/5/raw/main/index.html/image/photoC.jpg">
           <div class="photo-caption">You</div>
         </div>
         
         <div class="photo-card" style="animation-delay:11s;">
-          <img src="https://github.com/arsw26/Happy-Birthday-Srija/raw/main/index.html/image/photoD.jpg">
+          <img src="https://github.com/arsw26/5/raw/main/index.html/image/photoD.jpg">
           <div class="photo-caption">Srija 💖💘💝</div>
         </div>
         
         <div class="photo-card" style="animation-delay:14s;">
-          <img src="https://github.com/arsw26/Happy-Birthday-Srija/raw/main/index.html/image/photoE.jpg">
+          <img src="https://github.com/arsw26/5/raw/main/index.html/image/photoE.jpg">
           <div class="photo-caption">My</div>
         </div>
         
         <div class="photo-card" style="animation-delay:17s;">
-          <img src="https://github.com/arsw26/Happy-Birthday-Srija/raw/main/index.html/image/photoF.jpg">
+          <img src="https://github.com/arsw26/5/raw/main/index.html/image/photoF.jpg">
           <div class="photo-caption">Jaan💖💘💝</div>
         </div>
       </div>
@@ -348,7 +369,7 @@
     
     <footer class="footer">
       <div style="text-align: center; margin-top: 30px;">
-  <a href="https://arsw26.github.io/Happy-Birthday-Srija/birthday-wishes.html"
+  <a href="https://arsw26.github.io/5/birthday-wishes.html"
     style="font-family: 'Dancing Script', cursive; 
             font-size: 1.8rem; 
             color: #d80032;
@@ -393,6 +414,9 @@
       messages.forEach((msg, index) => {
         msg.style.animationDelay = `${0.2 * index}s`;
       });
+
+      // Ensure music continues when navigating to the next page
+      localStorage.setItem('musicPlaying', 'true');
     });
   </script>
 </body>
